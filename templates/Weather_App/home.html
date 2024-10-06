@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Home Page | {% endblock %}
+
+
+{% block start %}
+
+<div class="container">
+    <div class="col-6 border rounded p-2 shadow-lg mx-auto">
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name='city' placeholder='Enter City'>
+    <button type='submit'>Search</button>
+</form>
+
+<h2>{{temp}}</h2>
+<h3>{{city}}</h3>
+<p>{{description}}</p>
+<P>
+    <img src="http://openweathermap.org/img/wn/{{ icon }}@2x.png" width='100px' alt="Weather icon">
+
+</P>
+<p>{{day}}</p>
+</div>
+</div>
+
+
+{% endblock %}
+
+
+{% comment %} ************8
+ {% endcomment %}
+ 
